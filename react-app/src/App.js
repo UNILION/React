@@ -79,8 +79,11 @@ function App() {
     content = <Create onCreate={(_title, _body) => {
       const newTopic = {id:nextId, title: _title, body: _body}
       const newTopics =  [...topics]
-      newTopics.push(newTopic)
-      setTopics(newTopics)
+      newTopics.push(newTopic);
+      setTopics(newTopics);
+      setMode('READ');
+      setId(nextId);
+      setNextId(nextId + 1);
     }}></Create>
   }
 
