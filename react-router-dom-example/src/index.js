@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import {BrowserRouter} from 'react-router-dom';
+import { Routes, BrowserRouter, Route } from 'react-router-dom';
 
 function Home() {
   return (
@@ -35,9 +35,16 @@ function App() {
   return (
     <div>
       <h1>React Router DOM Example</h1>
-      <Home></Home>
-      <Topics></Topics>
-      <Contact></Contact>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/topics">Topics</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/topics" element={<Topics />}></Route>
+        <Route path="/contact" element={<Contact />}></Route>
+      </Routes>
     </div>
   )
 }
@@ -46,7 +53,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-    <App />
+      <App />
     </BrowserRouter>
   </React.StrictMode>
 );
