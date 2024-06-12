@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import { Link, Routes, BrowserRouter, Route } from 'react-router-dom';
+import { NavLink, Routes, BrowserRouter, Route } from 'react-router-dom';
 
 function Home() {
   return (
@@ -36,9 +36,9 @@ function App() {
     <div>
       <h1>React Router DOM Example</h1>
       <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/topics">Topics</Link></li>
-        <li><Link to="/contact">Contact</Link></li>
+        <li><NavLink to="/">Home</NavLink></li>
+        <li><NavLink to="/topics">Topics</NavLink></li>
+        <li><NavLink to="/contact">Contact</NavLink></li>
       </ul>
       <Routes>
         <Route path="/" element={<Home />}></Route>
